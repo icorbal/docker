@@ -1,4 +1,4 @@
-FROM frekele/docker-ant
+FROM frekele/ant
 
 ENV ANT_VERSION=1.10.0
 ENV ANT_HOME=/opt/ant
