@@ -2,6 +2,10 @@ FROM anapsix/alpine-java:8_jdk
 
 USER root
 
+RUN apk add --update zip
+
+RUN apk --update add --no-cache openssl wget
+
 #####
 # Ant
 #####
@@ -43,10 +47,6 @@ RUN cd /tmp \
         && rm ant-contrib-${ANT_CONTRIB_VERSION}-bin.tar.gz \
         && unset ANT_CONTRIB_VERSION
 
-
-RUN apk add --update zip
-
-RUN apk --update add --no-cache openssl wget
 
 RUN export GDRIVE_URL='https://docs.google.com/uc?id=0B3X9GlR6EmbnQ0FtZmJJUXEyRTA&export=download' \
         && wget "${GDRIVE_URL}" -O /usr/local/bin/gdrive \
