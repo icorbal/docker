@@ -12,13 +12,13 @@ RUN apk --update add --no-cache openssl wget
 
 # Preparation
 
-ENV ANT_VERSION 1.9.7
+ENV ANT_VERSION 1.10.0
 ENV ANT_HOME /etc/ant-${ANT_VERSION}
 
 # Installation
 
 RUN cd /tmp \
-    && wget http://www.us.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz \
+    && wget --no-check-certificate --no-cookies http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz \
     && mkdir ant-${ANT_VERSION} \
     && tar -zxvf apache-ant-${ANT_VERSION}-bin.tar.gz \
     && mv apache-ant-${ANT_VERSION} ${ANT_HOME} \
