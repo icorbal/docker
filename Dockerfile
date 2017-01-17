@@ -1,4 +1,4 @@
-FROM anapsix/alpine-java:8_jdk
+FROM anapsix/alpine-java:jdk8
 
 USER root
 
